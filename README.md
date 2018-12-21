@@ -20,10 +20,10 @@ Linux作业
 而chmod(const char *path, mode_t mode)中mode需要的数是一个八进制的数<br>
 所以我们现在要将mode转换成一个八进制<br>
 ` ``c
-mode_u = mode / 100;					//文件所有者权限<br>
-mode_g = (mode - (mode_u*100))/10;			//所属组权限<br>
-mode_o = mode - (mode_u*100) - (mode_g*10)		//其他人权限<br>
-mode = (mode_u * 8 * 8) + (mode_g * 8) + mode _o	//转换成八进制<br>
+mode_u = mode / 100;					//文件所有者权限
+mode_g = (mode - (mode_u*100))/10;			//所属组权限
+mode_o = mode - (mode_u*100) - (mode_g*10)		//其他人权限
+mode = (mode_u * 8 * 8) + (mode_g * 8) + mode _o	//转换成八进制
 ` ``
 
 chmod a+x, u+rw test.c//字符格式
